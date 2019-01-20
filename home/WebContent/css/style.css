@@ -920,7 +920,7 @@ span.video-text i {
 	
 }
 .w3l_header {
-    font-size: 3em;
+    font-size: 29px;
     color: #FF0000;
     letter-spacing: 1px;
     position: relative;
@@ -928,7 +928,7 @@ span.video-text i {
     text-align: center;
 	width:40%;
 	float:left;
-	
+	margin-top: 30px;
 	
 }
 .w3l_header1 {

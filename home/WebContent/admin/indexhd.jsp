@@ -181,7 +181,7 @@
           <div class="container-fluid">
             <div class="row">
  
-              <div class="col-lg-7">
+              <div class="col-lg-12">
                 <table class="table">
                         
             

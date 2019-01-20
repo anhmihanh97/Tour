@@ -239,7 +239,7 @@
                 
                <textarea class="form-textarea" id="noiDung" name="mota" ></textarea>
                 <script type="text/javascript" language="javascript" >
-							CKEDITOR.replace('noiDung',{width: '700px',height : '300px'});
+							CKEDITOR.replace('noiDung',{width: '1100px',height : '300px'});
    						
 				</script>
                 </td>

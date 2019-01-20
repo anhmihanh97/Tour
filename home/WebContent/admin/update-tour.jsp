@@ -48,25 +48,15 @@
   
   <body class="app header-fixed sidebar-fixed aside-menu-fixed sidebar-lg-show">
   <% 
-//   		Tour_DAO Tour_DAO = new Tour_DAO();
-//   		ArrayList<Tour> listTours =Tour_DAO.getListTour();
-			Tour_DAO Tour_DAO = new Tour_DAO();
-			ArrayList<Tour> listTours = Tour_DAO.getListTour();
+			Tour_DAO tour_DAO = new Tour_DAO();
+			ArrayList<Tour> listTours = tour_DAO.getListTour();
   %>
   <%
-//   String error="";
-//   	if(request.getParameter("error")!=null){
-//   		error=(String) request.getParameter("error");
-//   	
-
 		String error="";
 		if(request.getParameter("error")!=null){
 			error=(String) request.getParameter("error");
 			}
-		
   %>
-  
-  <%Tour t =new Tour();  %>
     <header class="app-header navbar">
       <button class="navbar-toggler sidebar-toggler d-lg-none mr-auto" type="button" data-toggle="sidebar-show">
         <span class="navbar-toggler-icon"></span>
@@ -92,10 +82,8 @@
         <li class="nav-item dropdown dropleft float-right">
           <a class="nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
               <img class="img-avatar" src="admin/img/avatars/8.png" alt="admin.com">
-            
             </div>
           </a>
-          
         </li>
       </ul>
       <button class="navbar-toggler aside-menu-toggler d-md-down-none" type="button" data-toggle="aside-menu-lg-show">
@@ -135,11 +123,6 @@
                 <div>Quản Lý Đăng Ký Tour</div>
               </a>
             </li>
-<!--             <li class="nav-title"> -->
-<!--               <a class="nav-link manager-category" data-set=".main-bill-manager" href="/home/Qlhd_View_Controller"> -->
-<!--                 <div>Quản Lý Hóa Đơn</div> -->
-<!--               </a> -->
-<!--             </li> -->
             <li class="nav-title">
               <a class="nav-link manager-category" data-set=".main-employee-manager" href="/home/Qlnv_View_Controller">
                 <div>Quản Lý Nhân Viên</div>
@@ -154,16 +137,18 @@
       <!-- Controller -->
       
       <form action="/home/Tour_Controller" method="post">
-      	
-      	
        <main class="main">
       <div class="main-content main-product-manager">
             <h2 class="breadcrumb breadcrumb-item">Update Tour</h2>
+            <%for(Tour t : tour_DAO.getListTour()){
+          	  int n=(int) request.getAttribute("tour_id");
+            	if(t.getTour_id()==n){
+            	%>
           <div class="row">
           
             <div class="col-lg-4">
            <td><h6>Mã Tour</h6></td>
-              <input type="text" class="form-control" name="ma" />      
+              <td><input type="text" class="form-control" name="ma"/><%=t.getTour_code() %> </td>     
             </div>
             
             <div class="col-lg-4">
@@ -193,25 +178,13 @@
             
                       <div class="col-lg-4">
               <h6>Thời Gian Bắt Đầu</h6>
-<!--               <input type="text" class="form-control" name="thoigianbatdau" /> -->
               <input class="form-control" type="datetime-local" name="thoigianbatdau"> 
-                         
             </div>
-            
-          
-            
             <div class="col-lg-4">
               <h6>Thời Gian Kết Thúc</h6>
-<!--               <input type="text" class="form-control" name="thoigianketthuc" /> -->
                 <input class="form-control" type="datetime-local" name="thoigianketthuc"> 
-              
-              
             </div>
-<!--             <div class="col-lg-4"> -->
-<!--               <h6>Tổng Số Ngày</h6> -->
-<!--               <input type="text" class="form-control" name="tongsongay" /> -->
-<!--             </div> -->
-  <div class="col-lg-4">
+ 				 <div class="col-lg-4">
                 <h6>Hình ảnh</h6>
                  <input type="file" class="form-control" name="uploadFile">
               </div>
@@ -220,23 +193,13 @@
               <h6>Tổng Số Người</h6>
               <input type="text" class="form-control" name="tongsonguoi" />          
             </div>
-            
             <div class="col-lg-4">
               <h6>Phương Tiện</h6>
               <input type="text" class="form-control" name="phuongtien" />
             </div>
-            
-<!--             <div class="col-lg-4"> -->
-<!--               <h6>Mã Hướng Dẫn Viên</h6> -->
-<!--               <input type="text" class="form-control" name="huongdanvien" /> -->
-<!--             </div> -->
-<!--               <div class="col-lg-4"> -->
-<!--               <h6>Điểm Bắt Đầu</h6><p style="color: red"><h7><i>(*Mã Không quá 5 ký tự)</i></h7></p> -->
-<!--               <input type="text" class="form-control"  /> -->
-<!--             </div> -->
              
           </div>
-          
+          <%} }%>
           <div class="row">
           
             
@@ -262,11 +225,6 @@
              <input type="hidden" name="command" value="update">
              <input type="hidden" name="tour_id" value="<%=request.getAttribute("tour_id")%>">
               <button class="btn btn-success">Cập Nhật Tour</button>
-              
-         <!--       <button type="button" class="thoat"  >Thoát</button>
-               <input type="hidden" name="command" value="insert">
-              	<input type="submit" value="Thêm Tour">--> 
-              
             </div>
           </div>
           
@@ -275,9 +233,6 @@
         
       </main>
      </form>
- 
- 
-  
       <aside class="aside-menu">
         <ul class="nav nav-tabs" role="tablist">
           <li class="nav-item">

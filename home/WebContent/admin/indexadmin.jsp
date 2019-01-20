@@ -43,7 +43,6 @@
   </head>
   <body class="app header-fixed sidebar-fixed aside-menu-fixed sidebar-lg-show">
   <%
-//  	Tour_DAO Tour_DAO = new Tour_DAO();
   		Tour_DAO Tour_DAO = new Tour_DAO();
   
 
@@ -160,11 +159,6 @@
                 <div>Quản Lý Đăng Ký Tour</div>
               </a>
             </li>
-<!--             <li class="nav-title"> -->
-<!--               <a class="nav-link manager-category" data-set=".main-bill-manager" href="/home/Qlhd_View_Controller"> -->
-<!--                 <div>Quản Lý Hóa Đơn</div> -->
-<!--               </a> -->
-<!--             </li> -->
             <li class="nav-title">
               <a class="nav-link manager-category" data-set=".main-employee-manager" href="/home/Qlnv_View_Controller">
                 <div>Quản Lý Nhân Viên</div>
@@ -186,15 +180,8 @@
           <div class="container-fluid">
           	<div class="title-product-admin">
 	          	<div>
-<!-- 	          		<h5>Chọn tên danh mục</h5> -->
-<!-- 		          	<select class="form-control" style="width: 500px; margin-bottom: 20px;"> -->
-<!-- 		          		<option>Tour Miền Bắc</option> -->
-<!-- 		          		<option>Tour Miền Trung</option> -->
-<!-- 		          		<option>Ttour Miền Nam</option> -->
-<!-- 		          		<option>Tất Cả Các Tour</option> -->
-<!-- 		          	</select> -->
 	          	</div>
-          		<div style="position: relative;
+          		<div style="position: relative ; margin-top: -43px; margin-bottom: 12px;
           		">
           			<input placeholder="Tìm kiếm sản phẩm" class="form-control" type="text" name="">
           			<span style="position: absolute; top: 49px; left:274px;" class="fa fa-search"></span>
@@ -257,9 +244,6 @@
                   
                   </tbody>
 				<%} %>
-				
-				
-				
                 </table>
                 <div class="btn-delete-product">
           
@@ -294,9 +278,6 @@
           </div>
         </div>
 
-  
-       
-
       </main>
       <aside class="aside-menu">
         <ul class="nav nav-tabs" role="tablist">
@@ -328,7 +309,5 @@
         <a href="https://facebook.com/ngominhanh.97">minh anh</a>
       </div>
     </footer>
-    
-   
   </body>
 </html>
