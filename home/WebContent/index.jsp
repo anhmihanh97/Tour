@@ -181,6 +181,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			</div>
           
 		  </div>
+		  <h3 class="w3l_header">Danh Sách Tour Miền Bắc</h3>
 		<div class="container">
                    
           <div class="bannerbottomcenter2"></div>  
@@ -188,7 +189,91 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
           <%
         
           for(Tour t : Tour_DAO.getListTour()){
-        	    if(t.getTour_guider_id()==1){	
+        	    if(t.getTour_guider_id()==1&&t.getTour_mien()==1){	
+        	    
+        	    %>
+								<div class="pricing-grid grid-one">
+									<div class="w3ls-top">
+										<img src="images/<%=t.getTour_img() %>" class="img-responsive" alt="">
+									</div>
+									<div class="w3ls-bottom">
+                                    <div class="bannerbottomcenter4"></div>
+										<ul class="count">
+												<h5 class="mauchu"><%=t.getTour_name()%></h5>
+											</br>
+                                            <h7><%=t.getTour_customer_notes() %></h7>
+										</ul>
+<%-- 										<h4><%=t.getTour_price() %><span class="sup">VND</span> </h4> --%>
+										<font style="color: red"><th>Giá:</th></font>
+										<th><h5><font style="color: red"><%=t.getTour_price()%></font> VND</h5></th>
+										<div class="more">
+										            
+								           
+											<a href="/home/Insert_Customer_View?command=update&tour_id=<%=t.getTour_id() %>&command=update&tour_name=<%=t.getTour_name()%>">Chọn Tour</a>				
+										</div>
+									</div>
+								</div>
+								
+								
+								
+				<%} }%>				
+																	
+								<div class="clearfix"> </div> 
+
+			</div>
+            
+
+		</div>	
+		<!-- Trung -->
+		<h3 class="w3l_header">Danh Sách Tour Miền Trung</h3>
+		<div class="container">
+                   
+          <div class="bannerbottomcenter2"></div>  
+          <div class="pricing-grids-info">
+          <%
+        
+          for(Tour t : Tour_DAO.getListTour()){
+        	    if(t.getTour_guider_id()==1&&t.getTour_mien()==2){	
+        	    
+        	    %>
+								<div class="pricing-grid grid-one">
+									<div class="w3ls-top">
+										<img src="images/<%=t.getTour_img() %>" class="img-responsive" alt="">
+									</div>
+									<div class="w3ls-bottom">
+                                    <div class="bannerbottomcenter4"></div>
+										<ul class="count">
+												<h5 class="mauchu"><%=t.getTour_name()%></h5>
+											</br>
+                                            <h7><%=t.getTour_customer_notes() %></h7>
+										</ul>
+<%-- 										<h4><%=t.getTour_price() %><span class="sup">VND</span> </h4> --%>
+										<font style="color: red"><th>Giá:</th></font>
+										<th><h5><font style="color: red"><%=t.getTour_price()%></font> VND</h5></th>
+										<div class="more">
+											<a href="/home/Insert_Customer_View?command=update&tour_id=<%=t.getTour_id() %>&command=update&tour_name=<%=t.getTour_name()%>">Chọn Tour</a>				
+										</div>
+									</div>
+								</div>
+								
+				<%} }%>				
+																	
+								<div class="clearfix"> </div> 
+
+			</div>
+		</div>	
+		
+		<h3 class="w3l_header">Danh Sách Tour Miền Nam</h3>
+		
+		<!-- nam -->
+		<div class="container">
+                   
+          <div class="bannerbottomcenter2"></div>  
+          <div class="pricing-grids-info">
+          <%
+        
+          for(Tour t : Tour_DAO.getListTour()){
+        	    if(t.getTour_guider_id()==1&&t.getTour_mien()==3){	
         	    
         	    %>
 								<div class="pricing-grid grid-one">

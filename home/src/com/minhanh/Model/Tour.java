@@ -16,8 +16,52 @@ public class Tour {
 	private int tour_guider_id;
 	private String tour_price;
 	private String tour_img;
+	private int tour_mien;
 	
 	
+
+
+
+
+
+
+	public int getTour_mien() {
+		return tour_mien;
+	}
+
+
+
+	public void setTour_mien(int tour_mien) {
+		this.tour_mien = tour_mien;
+	}
+
+
+
+	public Tour(int tour_id, String tour_code, String tour_name, String tour_destination_id,
+			String tour_sub_destination_id, String tour_start_id, String tour_start_date, String tour_finish_date,
+			String tour_number_date, String tour_number_customer, String tour_customer_notes, String tour_transport,
+			int tour_guider_id, String tour_price, String tour_img, int tour_mien) {
+		super();
+		this.tour_id = tour_id;
+		this.tour_code = tour_code;
+		this.tour_name = tour_name;
+		this.tour_destination_id = tour_destination_id;
+		this.tour_sub_destination_id = tour_sub_destination_id;
+		this.tour_start_id = tour_start_id;
+		this.tour_start_date = tour_start_date;
+		this.tour_finish_date = tour_finish_date;
+		this.tour_number_date = tour_number_date;
+		this.tour_number_customer = tour_number_customer;
+		this.tour_customer_notes = tour_customer_notes;
+		this.tour_transport = tour_transport;
+		this.tour_guider_id = tour_guider_id;
+		this.tour_price = tour_price;
+		this.tour_img = tour_img;
+		this.tour_mien = tour_mien;
+	}
+
+
+
 	public Tour(int tour_id) {
 		super();
 		this.tour_id = tour_id;
@@ -29,6 +73,19 @@ public class Tour {
 		super();
 		this.tour_id = tour_id;
 		this.tour_guider_id = tour_guider_id;
+	}
+
+
+
+	@Override
+	public String toString() {
+		return "Tour [tour_id=" + tour_id + ", tour_code=" + tour_code + ", tour_name=" + tour_name
+				+ ", tour_destination_id=" + tour_destination_id + ", tour_sub_destination_id="
+				+ tour_sub_destination_id + ", tour_start_id=" + tour_start_id + ", tour_start_date=" + tour_start_date
+				+ ", tour_finish_date=" + tour_finish_date + ", tour_number_date=" + tour_number_date
+				+ ", tour_number_customer=" + tour_number_customer + ", tour_customer_notes=" + tour_customer_notes
+				+ ", tour_transport=" + tour_transport + ", tour_guider_id=" + tour_guider_id + ", tour_price="
+				+ tour_price + ", tour_img=" + tour_img + ", tour_mien=" + tour_mien + "]";
 	}
 
 

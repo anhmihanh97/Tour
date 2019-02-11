@@ -202,6 +202,10 @@
                       <th>Phương Tiện</th>   
                       <th>Hình Ảnh</th> 
                       <th>Trạng Thái</th>
+                      <th>Miền</th>
+                      <th>Chọn</th>
+                      <th>Chọn</th>
+                      <th>Chọn</th>
                       <th>Duyệt</th>  
                       <th>Hủy</th>                                
                       <th>SỬA</th>
@@ -214,11 +218,23 @@
 						
 						for(Tour t : Tour_DAO.getListTour()){
 							String g="";
+							String c="";
 							if(t.getTour_guider_id()==1){
 								g="Duyệt";
 							}
 							else if(t.getTour_guider_id()==0){
 								g="Chưa Duyệt";
+							}
+							
+							
+							if(t.getTour_mien()==1){
+								c="Bắc";
+							}
+							else if(t.getTour_mien()==2){
+								c="Trung";
+							}
+							else if(t.getTour_mien()==3){
+								c="Nam";
 							}
 														
 							%>
@@ -234,7 +250,13 @@
 						<td><%=t.getTour_number_customer()%></td>
 						<td><%=t.getTour_transport()%></td>
 						<td><img src="./images/<%=t.getTour_img()%>" class=".main img"></td>
-						<td><%=g %></td>	
+						<td><%=g %></td>
+						<td><%=c %></td>	
+
+						<td><a href="/home/Tour_Controller?command=statusss&tour_id=<%=t.getTour_id() %>&tour_mien=<%=t.getTour_mien()%>"><button class="btn btn-warning">Bắc</button></a></td>
+						<td><a href="/home/Tour_Controller?command=statussss&tour_id=<%=t.getTour_id() %>&tour_mien=<%=t.getTour_mien()%>"><button class="btn btn-warning">Trung</button></a></td>
+						<td><a href="/home/Tour_Controller?command=statusssss&tour_id=<%=t.getTour_id() %>&tour_mien=<%=t.getTour_mien()%>"><button class="btn btn-warning">Nam</button></a></td>
+						
 						<td><a href="/home/Tour_Controller?command=status&tour_id=<%=t.getTour_id() %>&tour_guider_id=<%=t.getTour_guider_id()%>"><button class="btn btn-warning">Duyệt</button></a></td>		
 						<td><a href="/home/Tour_Controller?command=statuss&tour_id=<%=t.getTour_id() %>&tour_guider_id=<%=t.getTour_guider_id()%>"><button class="btn btn-warning">Huỷ</button></a></td>		
 						<td><a href="/home/Update_Tour_Controller?command=update&tour_id=<%=t.getTour_id() %>" target="_blank"><span class="fa fa-edit"></span></a></td>

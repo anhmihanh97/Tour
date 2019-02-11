@@ -76,7 +76,42 @@ public class Tour_Controller extends HttpServlet {
 							url="/Admin_View_Controller";
 							}
 						break;
+					case "statusss":
+						int tour_idddd	= Integer.valueOf(tour_id);
+						if(tour_dao.mien(tour_idddd)==true)
+						{
+							url="/Admin_View_Controller";
 						}
+						else {
+							url="/Admin_View_Controller";
+							}
+						break;
+						
+						
+					case "statussss":
+						int tour_iddddd	= Integer.valueOf(tour_id);
+						if(tour_dao.mienn(tour_iddddd)==true)
+						{
+							url="/Admin_View_Controller";
+						}
+						else {
+							url="/Admin_View_Controller";
+							}
+						break;
+						
+					case "statusssss":
+						int tour_idddddd	= Integer.valueOf(tour_id);
+						if(tour_dao.miennnn(tour_idddddd)==true)
+						{
+							url="/Admin_View_Controller";
+						}
+						else {
+							url="/Admin_View_Controller";
+							}
+						break;
+						};
+		
+		
 										
 		} catch (Exception e) {
 			System.out.println("khong thuc hien duoc");			

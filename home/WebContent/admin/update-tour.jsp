@@ -45,18 +45,13 @@
    
 
   </head>
-  
+ 
   <body class="app header-fixed sidebar-fixed aside-menu-fixed sidebar-lg-show">
   <% 
 			Tour_DAO tour_DAO = new Tour_DAO();
 			ArrayList<Tour> listTours = tour_DAO.getListTour();
   %>
-  <%
-		String error="";
-		if(request.getParameter("error")!=null){
-			error=(String) request.getParameter("error");
-			}
-  %>
+
     <header class="app-header navbar">
       <button class="navbar-toggler sidebar-toggler d-lg-none mr-auto" type="button" data-toggle="sidebar-show">
         <span class="navbar-toggler-icon"></span>
@@ -140,20 +135,17 @@
        <main class="main">
       <div class="main-content main-product-manager">
             <h2 class="breadcrumb breadcrumb-item">Update Tour</h2>
-            <%for(Tour t : tour_DAO.getListTour()){
-          	  int n=(int) request.getAttribute("tour_id");
-            	if(t.getTour_id()==n){
-            	%>
+            
           <div class="row">
           
             <div class="col-lg-4">
            <td><h6>Mã Tour</h6></td>
-              <td><input type="text" class="form-control" name="ma"/><%=t.getTour_code() %> </td>     
+              <td><input type="text" class="form-control" name="ma" /></td>     
             </div>
             
             <div class="col-lg-4">
               <h6>Tên Tour</h6>
-              <td><input type="text" class="form-control" name="themten" /><%=error%></td>
+              <td><input type="text" class="form-control" name="themten" /></td>
             </div>
             
             <div class="col-lg-4">
@@ -199,7 +191,7 @@
             </div>
              
           </div>
-          <%} }%>
+      
           <div class="row">
           
             
@@ -223,8 +215,8 @@
            
             
              <input type="hidden" name="command" value="update">
-             <input type="hidden" name="tour_id" value="<%=request.getAttribute("tour_id")%>">
-              <button class="btn btn-success">Cập Nhật Tour</button>
+             <input type="hidden" name="tour_id" value="<%=request.getAttribute("tour_id") %>">
+              <button class="btn btn-success" onclick="kiemtra()">Cập Nhật Tour</button>
             </div>
           </div>
           

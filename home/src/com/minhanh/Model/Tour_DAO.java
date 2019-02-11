@@ -34,6 +34,7 @@ public class Tour_DAO {
 					tour.setTour_guider_id(rs.getInt("tour_guider_id"));
 					tour.setTour_price(rs.getString("tour_price"));
 					tour.setTour_img(rs.getString("tour_img"));
+					tour.setTour_mien(rs.getInt("tour_mien"));
 					List.add(tour);
 							
 					}
@@ -217,6 +218,51 @@ public class Tour_DAO {
 			    }
 			}	
 			
+			// thay doi trang thai mien bac
+						public boolean mien(int tour_id) throws SQLException {
+						    try {
+						         Connection conn = DBConnect.getConnection();
+						         String sql = "update adhtour_db.tour set tour_mien=1 where tour_id = ?";
+						         PreparedStatement ps = (PreparedStatement) conn.prepareCall(sql);		     				
+								
+						         ps.setInt(1,tour_id);			
+
+								
+								return ps.executeUpdate()==1;
+						    } catch (Exception e) {
+						         return false;
+						    }
+						}	
+						// thay doi trang thai mien trung
+						public boolean mienn(int tour_id) throws SQLException {
+						    try {
+						         Connection conn = DBConnect.getConnection();
+						         String sql = "update adhtour_db.tour set tour_mien=2 where tour_id = ?";
+						         PreparedStatement ps = (PreparedStatement) conn.prepareCall(sql);		     				
+								
+						         ps.setInt(1,tour_id);			
+
+								
+								return ps.executeUpdate()==1;
+						    } catch (Exception e) {
+						         return false;
+						    }
+						}	
+						// thay doi trang thai mien nam
+						public boolean miennnn(int tour_id) throws SQLException {
+						    try {
+						         Connection conn = DBConnect.getConnection();
+						         String sql = "update adhtour_db.tour set tour_mien=3 where tour_id = ?";
+						         PreparedStatement ps = (PreparedStatement) conn.prepareCall(sql);		     				
+								
+						         ps.setInt(1,tour_id);			
+
+								
+								return ps.executeUpdate()==1;
+						    } catch (Exception e) {
+						         return false;
+						    }
+						}	
 			
 			public static void main(String[] args) {
 				
